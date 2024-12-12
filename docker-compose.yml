@@ -1,0 +1,10 @@
+services:
+  spark:
+    build: .
+    image: my-spark-iceberg:latest
+    container_name: spark_iceberg_container
+    volumes:
+      - ./data:/opt/data
+    ports:
+      - "4040:4040"  # Puerto de la UI de Spark
+    command: "tail -f /dev/null"
