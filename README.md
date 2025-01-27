@@ -57,7 +57,7 @@ spark = SparkSession \
 	.config("spark.sql.catalog.iceberg_catalog.cache-enabled", "false") \
     .getOrCreate()
 sc = spark.sparkContext
-Context = SQLContext(ssqlc)
+Context = SQLContext(sc)
 
 ```
 

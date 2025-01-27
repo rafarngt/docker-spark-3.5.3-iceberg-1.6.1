@@ -13,7 +13,7 @@ ENV SCALA_VERSION=2.12 \
 RUN apt-get update && apt-get install -y curl tar python3 procps && rm -rf /var/lib/apt/lists/*
 
 # Descarga e instalación de Spark
-RUN curl -fSL https://dlcdn.apache.org/spark/spark-${SPARK_VERSION}/spark-${SPARK_VERSION}-bin-hadoop${HADOOP_VERSION}.tgz -o /tmp/spark.tgz \
+RUN curl -fSL https://archive.apache.org/dist/spark/spark-${SPARK_VERSION}/spark-${SPARK_VERSION}-bin-hadoop${HADOOP_VERSION}.tgz -o /tmp/spark.tgz \
     && mkdir -p ${SPARK_HOME} \
     && tar -xvf /tmp/spark.tgz -C /opt \
     && mv /opt/spark-${SPARK_VERSION}-bin-hadoop${HADOOP_VERSION}/* ${SPARK_HOME} \
